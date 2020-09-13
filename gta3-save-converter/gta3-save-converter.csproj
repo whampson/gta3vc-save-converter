@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.42</AssemblyVersion>
+    <FileVersion>1.0.0.42</FileVersion>
+    <RootNamespace>SaveConverter</RootNamespace>
+    <AssemblyName>gta3-save-converter</AssemblyName>
+    <AssemblyTitle>GTA3 Mobile Save Converter</AssemblyTitle>
+    <Product>GTA3 Mobile Save Converter</Product>
+    <Authors>Wes Hampson</Authors>
+    <Copyright>(C) 2020 Wes Hampson</Copyright>
+    <Description>Convert GTA3 Android saves to iOS and vice-versa.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="GTASaveData.GTA3" Version="1.2.1" />
+    <PackageReference Include="WpfEssentials" Version="1.2.0" />
+    <PackageReference Include="WpfEssentials.Win32" Version="1.2.0" />
+    
+    <None Remove="Resources\american.gxt" />
+    <Resource Include="Resources\american.gxt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gta3-save-converter", "gta3-save-converter\gta3-save-converter.csproj", "{BD106F81-9FC1-4B18-9D4C-404F036C94A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD106F81-9FC1-4B18-9D4C-404F036C94A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD106F81-9FC1-4B18-9D4C-404F036C94A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD106F81-9FC1-4B18-9D4C-404F036C94A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD106F81-9FC1-4B18-9D4C-404F036C94A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D5932D92-4A2B-48FD-AA14-4C0C4CD4386D}
+	EndGlobalSection
+EndGlobal
