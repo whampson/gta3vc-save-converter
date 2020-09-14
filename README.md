@@ -6,10 +6,10 @@ and vice-versa.
 To run this program, you'll need a Windows PC with [.NET Core 3.1 Runtime](https://dotnet.microsoft.com/download/dotnet-core/current/runtime) installed.
 
 ## Screenshot
-![](https://i.imgur.com/wNREWKq.png)
+![](https://i.imgur.com/JQVAq9H.png)
 
 ## Credits
 Thanks to Lethal Vaccine for the idea!
 
-
+If you like my work, consider making a donation!  
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W026T3T)
