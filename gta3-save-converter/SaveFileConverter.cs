@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security;
-using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using GTASaveData;
@@ -260,7 +258,16 @@ namespace SaveConverter
 
         public ICommand About => new RelayCommand
         (
-            () => ShowInfo("TODO: About", "About")
+            () => ShowInfo(
+                $"{App.Name}\n" +
+                $"Version: {App.Version}\n" +
+                $"\n" +
+                $"This tool allows you to convert your Android saves to iOS and\n" +
+                $"your iOS saves to Android. Thanks to Lethal Vaccine for the idea!\n" +
+                $"\n" +
+                $"\n" +
+                $"{App.Copyright}",
+                title: "About")
         );
 
         public void ShowInfo(string text, string title = "Information")
@@ -291,7 +298,8 @@ namespace SaveConverter
         {
             FileDialogEventArgs e = new FileDialogEventArgs(type, callback)
             {
-                InitialDirectory = Directory.GetCurrentDirectory()
+                InitialDirectory = Directory.GetCurrentDirectory(),
+                Filter = "GTA3 Save Files|*.b",
             };
             FileDialogRequest?.Invoke(this, e);
         }

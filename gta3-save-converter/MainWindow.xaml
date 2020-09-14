@@ -6,8 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:SaveConverter"
     mc:Ignorable="d"
-    Title="GTA3 Mobile Save Converter"
-    Width="350" Height="250"
+    Title="{x:Static local:App.Name}"
+    Width="350" Height="235"
     WindowStartupLocation="CenterScreen"
     Loaded="Window_Loaded" Unloaded="Window_Unloaded"
     AllowDrop="True" Drop="Window_Drop">
@@ -71,7 +71,7 @@
 
             </GroupBox>
 
-            <Grid Grid.Row="1" VerticalAlignment="Center" IsEnabled="{Binding TheSave, Converter={StaticResource IsNotNull}}">
+            <Grid Grid.Row="1" VerticalAlignment="Bottom" IsEnabled="{Binding TheSave, Converter={StaticResource IsNotNull}}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
