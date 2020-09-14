@@ -5,8 +5,8 @@
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <Version>1.0.0</Version>
-    <AssemblyVersion>1.0.0.55</AssemblyVersion>
-    <FileVersion>1.0.0.55</FileVersion>
+    <AssemblyVersion>1.0.0.62</AssemblyVersion>
+    <FileVersion>1.0.0.62</FileVersion>
     <RootNamespace>SaveConverter</RootNamespace>
     <AssemblyName>gta3-save-converter</AssemblyName>
     <AssemblyTitle>GTA3 Mobile Save Converter</AssemblyTitle>
