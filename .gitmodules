@@ -1,0 +1,3 @@
+[submodule "lib/GTASaveData"]
+	path = lib/GTASaveData
+	url = https://github.com/whampson/gta-save-data
