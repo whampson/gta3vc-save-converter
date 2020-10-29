@@ -7,7 +7,7 @@
     xmlns:local="clr-namespace:SaveConverter"
     mc:Ignorable="d"
     Title="{x:Static local:App.Name}"
-    Width="350" Height="235"
+    Width="400" Height="235"
     WindowStartupLocation="CenterScreen"
     Loaded="Window_Loaded" Unloaded="Window_Unloaded"
     AllowDrop="True" Drop="Window_Drop">
@@ -58,15 +58,15 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Name:" />
-                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Format:" />
-                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Progress:" />
-                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Safehouse:" />
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Game:" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Title:" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Format:" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" Style="{StaticResource LabelStyleRight}" Text="Progress:" />
 
-                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding SaveNameOnDisplay}"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding SaveFormatOnDisplay}"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding ProgressOnDisplay, StringFormat=P2}"/>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding SafeHouseOnDisplay}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding GameNameOnDisplay}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding SaveNameOnDisplay}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding SaveFormatOnDisplay}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Margin="5" Style="{StaticResource LabelStyleLeft}" Text="{Binding ProgressOnDisplay, StringFormat=P2}"/>
                 </Grid>
 
             </GroupBox>
@@ -82,9 +82,20 @@
                 <ComboBox
                     Grid.Column="1" Margin="5"
                     Height="25"
-                    Style="{StaticResource ComboBoxStyle}"
-                    ItemsSource="{x:Static local:SaveFileConverter.ValidFormats}"
-                    SelectedItem="{Binding SelectedFormat}"/>
+                    SelectedItem="{Binding SelectedFormat}">
+                    <ComboBox.Style>
+                        <Style TargetType="ComboBox" BasedOn="{StaticResource ComboBoxStyle}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsGTA3}" Value="True">
+                                    <Setter Property="ItemsSource" Value="{x:Static local:SaveFileConverter.GTA3Formats}"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding IsViceCity}" Value="True">
+                                    <Setter Property="ItemsSource" Value="{x:Static local:SaveFileConverter.GTAVCFormats}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBox.Style>
+                </ComboBox>
                 
                 <Button
                     Grid.Column="2" Margin="5"

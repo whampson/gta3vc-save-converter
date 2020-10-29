@@ -4,31 +4,36 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0</Version>
-    <AssemblyVersion>1.0.0.62</AssemblyVersion>
-    <FileVersion>1.0.0.62</FileVersion>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.64</AssemblyVersion>
+    <FileVersion>1.1.0.64</FileVersion>
     <RootNamespace>SaveConverter</RootNamespace>
-    <AssemblyName>gta3-save-converter</AssemblyName>
-    <AssemblyTitle>GTA3 Mobile Save Converter</AssemblyTitle>
-    <Product>GTA3 Mobile Save Converter</Product>
+    <AssemblyName>gta3vc-save-converter</AssemblyName>
+    <AssemblyTitle>GTA3/VC Mobile Save Converter</AssemblyTitle>
+    <Product>GTA3/VC Mobile Save Converter</Product>
     <Authors>Wes Hampson</Authors>
     <Copyright>(C) 2020 Wes Hampson</Copyright>
-    <Description>Convert GTA3 Android saves to iOS and vice-versa.</Description>
+    <Description>This tool allows you to convert your Grand Theft Auto 3 or Vice City for Android save files to the iOS format or vice-versa.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/whampson/gta3-save-converter</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/whampson/gta3-save-converter</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/whampson/gta3vc-save-converter</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/whampson/gta3vc-save-converter</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    
-    <PackageReference Include="GTASaveData.GTA3" Version="1.2.2" />
+    <None Remove="Resources\GTA3\american.gxt" />
+    <None Remove="Resources\VC\american.gxt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="WpfEssentials.Win32" Version="1.2.1" />
-    
-    <None Remove="Resources\american.gxt" />
-    <Resource Include="Resources\american.gxt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    
+    <ProjectReference Include="..\lib\GTASaveData\GTASaveData.Core\GTASaveData.Core.csproj" />
+    <ProjectReference Include="..\lib\GTASaveData\GTASaveData.GTA3\GTASaveData.GTA3.csproj" />
+    <ProjectReference Include="..\lib\GTASaveData\GTASaveData.VC\GTASaveData.VC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\GTA3\american.gxt" />
+    <Resource Include="Resources\VC\american.gxt" />
   </ItemGroup>
 
 </Project>
